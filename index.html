@@ -11,7 +11,60 @@
 <body>
     <header><h1>Temperature Converter</h1></header>
 
+    <form class="mx-auto">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Temperature</label>
+          <div class="col-sm-4">
+            <input type="number" class="form-control" placeholder="Enter A Number">
+          </div>
+        </div>
+        
 
+        
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Choose a Scale</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                <label class="form-check-label" for="gridRadios1">
+                  Celsius
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                  Fahrenheit
+                </label>
+              </div>
+              
+            </div>
+          </div>
+        </fieldset>
+
+        
+        
+        <div class="form-group row btn-group mx-auto">
+            <div class="col-sm-10">
+                <button type="button" class="btn btn-primary">Clear</button>
+            </div>
+        </div>
+        <div class="form-group row btn-group mx-auto">
+            <div class="col-sm-10">
+                <button type="button" class="btn btn-primary">Convert</button>
+            </div>  
+        </div> 
+        
+      </form>
+
+
+
+
+
+
+
+
+        
 
 
     <div id="output"></div>

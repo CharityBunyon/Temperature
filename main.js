@@ -1,10 +1,21 @@
+//Variables
+
+const tempInput =document.getElementById('tempInput');
+const celsiusRadioBtn = document.getElementById('F2C');
+const fahRadioBtn = document.getElementById('C2F');
+const clearInput = document.getElementById('clearTemp');
+const convertBtn = document.getElementById('converter');
+const convertedTemp = document.getElementById('output')
+
+
+
 const printToDom = (divID, textToPrint) => {
     const selectedDiv = document.getElementById(divID);
     selectedDiv.innerHTML = textToPrint;
 }
 
-const toCelsius = () =>{
-      
+const convertToCelsius = () => {
+      const 
 };
 
 const toFahrenheit = () => {

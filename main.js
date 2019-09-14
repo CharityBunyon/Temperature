@@ -15,11 +15,20 @@ const printToDom = (divID, textToPrint) => {
 }
 
 const convertToCelsius = () => {
-      const 
+      
 };
 
 const toFahrenheit = () => {
-
+    const x = tempInput.value;
+    const convertToF = (x * 9/5) + 32;
+    const ftemp = convertToF.toFixed();
+    if (ftemp > 90) {
+        convertedTemp.style.color = 'red';
+    } else if (ftemp < 32) {
+        convertedTemp.style.color = 'blue';
+    } else {
+        convertedTemp.style.color = 'green';
+    }
 };
 
 //Get a reference to the button element in the DOM

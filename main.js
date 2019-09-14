@@ -12,5 +12,14 @@ const toFahrenheit = () => {
 };
 
 //Get a reference to the button element in the DOM
-const button = document.getElementById("converter");
+const button = document.getElementById('converter');
 
+//This function should determine which conversion should happen based on which radio button us selected
+
+const determineConverter = (e) => {
+    console.log("event", e);
+};
+
+
+//Assign a function to be executed when the button is clicked
+button.addEventListener('click', determineConverter);

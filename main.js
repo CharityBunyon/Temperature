@@ -15,7 +15,16 @@ const printToDom = (divID, textToPrint) => {
 }
 
 const convertToCelsius = () => {
-      
+    const x = tempInput.value;
+    const convertToC = (x -32) * 5/9;
+    const ftemp = convertToC.toFixed();
+    if (ftemp < 0) {
+        convertedTemp.style.color = 'blue';
+    } else if (ftemp > 32) {
+        convertedTemp.style.color = 'red';
+    } else {
+        convertedTemp.style.color = 'green';
+    }
 };
 
 const toFahrenheit = () => {

@@ -1,67 +1,86 @@
-//Variables
-
-const tempInput =document.getElementById('tempInput');
-const celsiusRadioBtn = document.getElementById('F2C');
-const fahRadioBtn = document.getElementById('C2F');
-const clearInput = document.getElementById('clearTemp');
-const convertBtn = document.getElementById('converter');
+const temp = document.getElementById('tempInput');
+const celsiusRadioBtn = document.getElementById('gridRadios1');
+const fahRadioBtn = document.getElementById('gridRadios2');
 const convertedTemp = document.getElementById('output')
 
 
 
 const printToDom = (divID, textToPrint) => {
-    const selectedDiv = document.getElementById(divID);
-    selectedDiv.innerHTML = textToPrint;
+    document.getElementById(divID).innerHTML = textToPrint;
 }
 
 // Celsius Function
-const convertToCelsius = (x) => {
-    const x = tempInput.value;
-    const convertToC = (x - 32) * 5/9;
-    const ctemp = convertToC.toFixed();
-    if (ctemp < 0) {
-        convertedTemp.style.color = 'blue';
-    } else if (ctemp > 32) {
-        convertedTemp.style.color = 'red';
-    } else {
-        convertedTemp.style.color = 'green';
+const convertToCelsius = (temp) => {
+    const newTemp = Math.floor((temp - 32) * 5/9);
+    if (newTemp <= 0) {
+        document.getElementById('output').style.color = 'blue';
+    } else if (newTemp >= 32) {
+        document.getElementById('output').style.color = 'red';
+    } else if(newTemp > 0 && newTemp < 32) {
+        document.getElementById('output').style.color = 'green';
     }
-    printToDom(ctemp + '\xBOC', 'output')
+    printToDom('output', `<h3>${newTemp}</h3>`)
     
-};
+}
 
 
 //Fahrenheit Function
-const convertToFahrenheit = (x) => {
-    const x = tempInput.value;
-    const convertToF = (x * 9/5) + 32;
-    const ftemp = convertToF.toFixed();
-    if (ftemp > 90) {
-        convertedTemp.style.color = 'red';
-    } else if (ftemp < 32) {
-        convertedTemp.style.color = 'blue';
-    } else {
-        convertedTemp.style.color = 'green';
+const convertToFahrenheit = (temp) => {
+    const newTemp = Math.floor((temp * 9/5) + 32);
+    if (newTemp >= 90) {
+        document.getElementById('output').style.color = 'red';
+    } else if (convertToF <= 32) {
+        document.getElementById('output').style.color = 'blue';
+    } else if (newTemp > 32 && newTemp < 90) {
+        document.getElementById('output').style.color = 'green';
     }
-    printToDom(ftemp + '\xBOF', 'output')
-};
+    printToDom('output', `<h3>${newTemp}</h3>`)
+}
 
-//Get a reference to the button element in the DOM
-const button = document.getElementById('converter');
+
+// Get a reference to the button element in the DOM
+const clearInput = document.getElementById('clearTemp');
+const convertBtn = document.getElementById('converter');
+
 
 //This function should determine which conversion should happen based on which radio button us selected
 
 const determineConverter = (e) => {
-    if (celsiusRadioBtn.checked === true) {
-        tempInput.focus();
-        convertToCelsius();
-       
-    } else {
-        (fahRadioBtn.checked === true)
-        tempInput.focus();
-        convertToFahrenheit();
+    const buttonId = e.target.id;
+    if (buttonId === 'converter' && celsiusRadioBtn.checked === true){
+        convertToCelsius(temp.value);
+    } else  if (buttonId === 'converter' && fahRadioBtn.checked === true){
+        convertToFahrenheit(temp.value);
     }
-};
+}
+
+
+const enterFunc = (e) => {
+    const key = e.keyCode; 
+    if (key === 13 && fahRadioBtn.checked === true) {
+        e.preventDefault();
+        toFahrenheit(temp.value);
+    } else if (key === 13 && celsiusRadioBtn.checked === true) {
+        e.preventDefault();
+        toCelsius(temp.value);
+    }
+}
+
+// This should clear the page when user clicks clearbtn
+
+const clearBtn = () => {
+    temp.value = '';
+    printToDom('output', '');
+    celsiusRadioBtn.checked = false;
+    fahRadioBtn.checked = false;
+    }
+
+
+
+
 
 //Assign a function to be executed when the button is clicked
-button.addEventListener('click', determineConverter);
+
+convertBtn.addEventListener('click', determineConverter);
+temp.addEventListener('keypress', enterFunc);
+clearInput.addEventListener('click', clearBtn);

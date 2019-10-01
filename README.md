@@ -4,7 +4,7 @@
 Use this application to convert a number to Celsius or Fahrenheit.
 
 ## Screenshots
-![Sorting HatPreview 1]()
+![Sorting HatPreview 1](https://raw.githubusercontent.com/CharityBunyon/Temperature/master/screenshots/SS1.png)
 
 
 

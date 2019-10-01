@@ -9,62 +9,53 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <h1>Temperature Converter</h1>
+  <h1>Temperature Converter</h1>
 
-    <div class="container">
-      <form>
-          <div class="form-group row">
-            <label for= "number" class="col-sm-2 col-form-label">Temperature</label>
-            <div class="col-sm-4">
-              <input type="number" class="form-control" placeholder="Enter A Number" id="tempInput">
-            </div>
+  <div class="container">
+    <form>
+        <div class="form-group row">
+          <label for= "number" class="col-sm-2 col-form-label">Temperature</label>
+          <div class="col-sm-4">
+            <input type="number" class="form-control" placeholder="Enter A Number" id="tempInput">
           </div>
-          
-
-          
-          <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Choose a Scale</legend>
-              <div class="col-sm-5">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                  <label class="form-check-label" for="gridRadios1">
-                    Celsius
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                  <label class="form-check-label" for="gridRadios2">
-                    Fahrenheit
-                  </label>
-                </div>
-                
-              </div>
-            </div>
-          </fieldset>
-
-          
-          
-          <div class="form-group row">
-              <div class="col-sm-5">
-                  <button id="clearTemp" type="button" class="btn btn-outline-info">Clear</button>
-              </div>
-              <div class="col-sm-5">
-                  <button type="button" id="converter" class="btn btn-primary">Convert</button>
-              </div>  
-              </div> 
-        </form>
-    </div>
-
-
-
-
-
-
-
-
+        </div>
         
 
+        
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-10 offset-2">Choose a Scale</legend>
+            <div class="col-sm-5">
+              <div class="form-check col-sm-10 offset-2">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                <label class="form-check-label" for="gridRadios1">
+                  Celsius
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                  Fahrenheit
+                </label>
+              </div>
+              
+            </div>
+          </div>
+        </fieldset>
+
+        
+        
+        <div class="form-group row">
+            <div class="col-sm-5">
+                <button id="clearTemp" type="button" class="btn btn-outline-info">Clear</button>
+            </div>
+            <div class="col-sm-5">
+                <button type="button" id="converter" class="btn btn-primary">Convert</button>
+            </div>  
+            </div> 
+      </form>
+  </div>
+    
 
     <div id="output"></div>
    
